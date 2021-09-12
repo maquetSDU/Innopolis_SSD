@@ -9,6 +9,7 @@ def decorator(func):
     like: Name of function; Type of function;
         Sign;Arguments; Docstring; Source code;
         and function output
+    param func: function from main.py
     '''
     calls=0
 
