@@ -6,6 +6,7 @@ def decorator(func):
     Decorator function, that
     counts functions(from main.py) execution time
     and number of calls
+    param func: function from main.py
     '''
     calls=0
     def task(*args):
