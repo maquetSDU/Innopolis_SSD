@@ -16,7 +16,12 @@ else:
 
 @decorator
 def quad_eq(a, b, c):
-    """Simple quadratic equation solver!!!"""
+    """
+    Simple quadratic equation solver!!!
+    param a: coefficient before x**2
+    param b: coefficient before x
+    param c: last coefficient
+    """
     discr = (b ** 2) - (4 * a * c)
     first_answer = (-b - cmath.sqrt(discr)) / (2 * a)
     second_answer = (-b + cmath.sqrt(discr)) / (2 * a)
@@ -25,7 +30,10 @@ def quad_eq(a, b, c):
 
 @decorator
 def pascal_tri(n):
-    """Pascal triangle from lab!!!"""
+    """
+    Pascal triangle from lab!!!
+    param n: height of triangle
+    """
     trow = [1]
     y = [0]
     for x in range(max(n, 0)):
@@ -59,7 +67,7 @@ if a == 'task3' or a == 'task4':
     func_lambda_2.plot_table()
 
 # test case for task4 with error...
-if a=='task4':
+if a == 'task4':
     quad_eq(3, 5, 7)
     func_lambda_1(1234568)
     pascal_tri()
