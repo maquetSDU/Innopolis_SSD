@@ -1,21 +1,25 @@
 import cmath
 
-print('keywords:\ntask1\ntask2\ntask3\ntask4')
-a = input('task name:')
-if a == 'task1':
-    from task1 import decorator
-elif a == 'task2':
-    from task2 import decorator
-elif a == 'task3':
-    from task3 import decorator
-elif a == 'task4':
-    from task4 import decorator
+print("keywords:\ntask1\ntask2\ntask3\ntask4")
+a = input("task name:")
+
+if a == "task1":
+    from task1 import decorator  # use another name for this decorator
+elif a == "task2":
+    from task2 import decorator  # use another name for this decorator
+elif a == "task3":
+    from task3 import decorator  # use another name for this decorator
+elif a == "task4":
+    from task4 import decorator  # use another name for this decorator
 else:
-    print('Incorrect! Please, write ''task'' and task number!')
+    print("Incorrect! Please, write " "task" " and task number!")
 
 
 @decorator
 def quad_eq(a, b, c):
+    """
+    Describe what is a, b, c here??
+    """
     """Simple quadratic equation solver!!!"""
     discr = (b ** 2) - (4 * a * c)
     first_answer = (-b - cmath.sqrt(discr)) / (2 * a)
@@ -25,7 +29,10 @@ def quad_eq(a, b, c):
 
 @decorator
 def pascal_tri(n):
-    """Pascal triangle from lab!!!"""
+    """Pascal triangle from lab!!!
+    What is n here???
+    """
+
     trow = [1]
     y = [0]
     for x in range(max(n, 0)):
@@ -55,11 +62,11 @@ pascal_tri(12)
 func_lambda_2(1234444)
 
 # it allows to plot table
-if a == 'task3' or a == 'task4':
+if a == "task3" or a == "task4":
     func_lambda_2.plot_table()
 
 # test case for task4 with error...
-if a=='task4':
+if a == "task4":
     quad_eq(3, 5, 7)
     func_lambda_1(1234568)
     pascal_tri()
