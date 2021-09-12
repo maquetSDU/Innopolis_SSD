@@ -8,15 +8,15 @@ def decorator(func):
     and number of calls
     param func: function from main.py
     '''
-    calls=0
+    calls = 0
     def task(*args):
         nonlocal calls
-        calls+=1
-        start=timer()
+        calls += 1
+        start = timer()
         # redirects main.py functions outputs to f, because we don't need them!
         with redirect_stdout(io.StringIO()) as f:
             func(*args)
-        end=timer()
-        print(func.__name__ +' call '+ str(calls) + ' executed in '+ str(end-start) + ' sec')
+        end = timer()
+        print(func.__name__ +' call '+ str(calls) + ' executed in ' + str(end-start) + ' sec')
 
     return task
