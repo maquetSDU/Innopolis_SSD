@@ -10,12 +10,12 @@ class decorator:
     '''
     arr = {}
     def __init__(self,func):
-        self.calls=0
-        self.func=func
+        self.calls = 0
+        self.func = func
 
     def __call__(self,*args):
-        self.args=locals()
-        self.calls+=1
+        self.args = locals()
+        self.calls += 1
 
         with open('text.txt','a') as q:
 
@@ -25,7 +25,7 @@ class decorator:
                     start = timer()
                     out = self.func(*args)
                     end = timer()
-                s=w.getvalue()
+                s = w.getvalue()
                 # print all info...
                 print(self.func.__name__ + ' call ' + str(self.calls) +
                       ' executed in ' + str(end - start) + ' sec')
@@ -43,12 +43,12 @@ class decorator:
         '''
         function, that plots ranking table
         '''
-        q=dict(sorted(decorator.arr.items(), key=lambda item: item[1]))
+        q = dict(sorted(decorator.arr.items(), key=lambda item: item[1]))
         print('PROGRAM | RANK | TIME ELAPSED')
-        count=1
+        count = 1
         for i in q:
             print(i[0],'\t',count,'\t',float(q[i])*1000,'ms')
-            count+=1
+            count += 1
 
 
 
